@@ -9,12 +9,22 @@
 </head>
 <body>
 
-  <div id="app"></div>
+  <div id="app">
+    <p>Total Likes: {{ total}} </p>
+    <like-component message="Like" @increment="incrementTotal"></like-component>
+    <like-component message="Awesome" @increment="incrementTotal"></like-component>
+    <like-component message="Great" @increment="incrementTotal"></like-component>
+    <like-component @increment="incrementTotal"></like-component>
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
 
-
+<!-- /* // ========================================================
+// // ドットインストール #1-#14までのコード
+// ======================================================== */ -->
 <!-- <div id="app" class="container">
   <h1>
     <button @click="purge">Purge</buttn>
