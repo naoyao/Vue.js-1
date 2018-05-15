@@ -7,7 +7,6 @@
 
   // Components
   var likeComponent = Vue.extend({
-    // props: ['message'],
     props: {
       message:{
         type: String,
@@ -23,6 +22,7 @@
     methods: {
       countUp:function(){
         this.count++;
+        this.$emit('increment');
       }
     }
   });
@@ -31,6 +31,15 @@
     el:'#app',
     components:{
       'like-component': likeComponent
+    },
+    data:{
+      total:0
+    },
+    methods:{
+      incrementTotal:function(){
+        this.total++;
+
+      }
     }
   });
 
